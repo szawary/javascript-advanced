@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <article class='article'></article>
+    <script>
+        'use strict';
+
+        const people = [
+            {
+                firstName: 'John',
+                lastName: 'Doe',
+            },
+            {
+                firstName: 'Jane',
+                lastName: 'Flowers',
+            },
+        ];
+
+        const template =
+            `<div>
+                    ${people.map(people => `<p>${people.firstName} ${people.lastName}</p>`).join('')}
+            </div>`;
+        document.querySelector('.article').innerHTML = template;
+
+    </script>
+</body>
+
+</html>
