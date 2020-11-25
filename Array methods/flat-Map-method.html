@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use stict';
+
+        // matrix to simple array ...
+        const numericArray = [234, 534, 102, 838, 23, 231, 66, 55];
+        const exponetialFlatArray = numericArray
+            .map(item => [item, item ** 2, item ** 3])
+            .flat();
+        console.log(exponetialFlatArray);
+
+
+        // 2 in 1, map + flat method
+        const exponentialFlatArray2 = numericArray.flatMap(item => [item, item ** 2, item ** 3]);
+        console.log(exponentialFlatArray2);
+
+    </script>
+</body>
+
+</html>

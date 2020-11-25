@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        'use stict';
+
+        const user = [{
+            firstName: 'Joe',
+            lastName: 'Doe',
+            age: 18,
+        },
+        {
+            firstName: 'Jane',
+            lastName: 'Scott',
+            age: 25,
+        },
+        {
+            firstName: 'Jack',
+            lastName: 'Sommer',
+            age: 32,
+        }
+        ];
+
+
+        const findResult = user.find(user => user.age > 18);  // only the first object return us
+        console.log(findResult);
+
+        const findIndexResult = user.findIndex(user => user.age > 18);  // only the first object of index return us
+        console.log(findIndexResult);
+
+        const someResult = user.some(user => user.age > 18);  // true or false, min. one item
+        console.log(someResult);
+
+        const everyResult = user.every(user => user.age > 18);  // true or false all of item
+        console.log(everyResult);
+
+
+    </script>
+</body>
+
+</html>
