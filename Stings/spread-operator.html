@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const message = 'message';
+        const characterArray = [...message];
+        console.log(characterArray);
+
+        const arr1 = [1, 2, 3, 4, 5];
+        const arr2 = [6, 7, 8, 9, 10];
+        console.log([...arr1, ...arr2]); // concatenation of elements
+
+        const copyArr1 = [...arr1];
+        console.log(copyArr1);  // make a copy from array, not is same array
+
+        const user = {
+            firstName: 'John',
+            lastName: 'Doe',
+        };
+        const copyUser = { ...user };
+        user.firstName = 'Jane';
+        console.log(copyUser);
+    </script>
+
+</body>
+
+</html>
