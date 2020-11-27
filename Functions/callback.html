@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        // callback függvény
+
+        // numberArray tömb létrehozása változóban
+        const numberArray = [23423, 2342354, 7, 1, 6456, 567896];
+
+        function compare(a, b) {
+            return a - b;
+        }
+
+        // a comper nevű függvényt beillesztem a sort metódusba
+        // ezzel sorbarendezem a tömb elemeit nagyság szerint
+
+        numberArray.sort(compare);
+
+        console.log(numberArray);
+    </script>
+
+
+</body>
+</html>
