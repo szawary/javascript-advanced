@@ -21,16 +21,19 @@
 
         // 2. task
         const arr = [345, 653, 958, 837, 12, 542, NaN, 'Hello'];
-        const primitive = 7455;
+        const primitive = 958;
 
+        const exists = arr.includes(primitive);
+        console.log('exists: ', exists);
 
-
+        const index = arr.findIndex(rank => rank === 95558);
+        console.log("index:", index);
 
         const allElementIsANumber = arr.every(arr => typeof arr === 'number');
-        console.log(allElementIsANumber);
+        console.log('all of element is number or not: ', allElementIsANumber);
 
         const someElementIsANumber = arr.some(arr => typeof arr === 'number');
-        console.log(someElementIsANumber);
+        console.log('Is there number in the array? ', someElementIsANumber);
         console.log('---- Task2 end ---');
 
         const content = ['első', 'második', 'harmadik'];
