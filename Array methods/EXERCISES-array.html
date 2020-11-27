@@ -17,11 +17,28 @@
             .map(item => item * 1.27)
             .reduce((item1, item2) => item1 + item2);
         console.log(arrayReturn);
+        console.log('---- Task1 end ---');
 
         // 2. task
-        const arr = [345, 653, 958, 837, 12, 542];
-        const primitive = 653;
+        const arr = [345, 653, 958, 837, 12, 542, NaN, 'Hello'];
+        const primitive = 7455;
 
+
+
+
+        const allElementIsANumber = arr.every(arr => typeof arr === 'number');
+        console.log(allElementIsANumber);
+
+        const someElementIsANumber = arr.some(arr => typeof arr === 'number');
+        console.log(someElementIsANumber);
+        console.log('---- Task2 end ---');
+
+        const content = ['első', 'második', 'harmadik'];
+        const a = content[0];
+        const b = content[1];
+        const c = content[2];
+        const content2 = `<ul><li>${a}</li><li>${b}</li><li>${c}</li></ul>`;
+        document.body.innerHTML = content2
     </script>
 </body>
 
