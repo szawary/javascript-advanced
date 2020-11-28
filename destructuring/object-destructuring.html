@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const person = {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 30,
+        };
+
+        // object property => variable
+        const { firstName, lastName } = person;
+        console.log(firstName, lastName);
+
+        // object property => custom new variable name
+        const { firstName: newVariable1, lastName: newVariable2 } = person;
+        console.log(newVariable1, newVariable2);
+
+
+
+        // add default value to variable
+        const styles = {
+            background: 'white',
+            color: 'red',
+            display: 'block',
+            visibility: 'hiden',
+        }
+
+        const {
+            background: newNameBackground = 'blue',
+            color,
+            display,
+            border: newNameBorder = '1px solid black' // get an default value
+        } = styles;
+
+        console.log(newNameBackground, color, display, newNameBorder);
+
+    </script>
+
+</body>
+
+</html>

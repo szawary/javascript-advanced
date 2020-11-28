@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const number1 = 7981950651514;
+        const number2 = 7921313513249519554;
+        const number3 = 573159872120206216;
+
+        // Is a number the input?
+
+        function typeOfInput(numb) {
+            const typeOfNumb = typeof numb;
+            if (typeOfNumb === 'number') {
+                console.log('Ok');
+            } else {
+                console.log('Not number');
+            }
+        };
+
+        typeOfInput(number1);
+        typeOfInput(number2);
+        typeOfInput(number3);
+
+        // Is BigInt the input?
+
+        const bigIntMax = Number.MAX_SAFE_INTEGER;
+
+        function convertToBigInt(a) {
+            if (a > bigIntMax) {
+                const bigIntA = BigInt(a);
+                console.log(typeof bigIntA);
+            } else {
+                console.log('not bigint');
+            };
+        };
+
+        convertToBigInt(number1);
+        convertToBigInt(number2);
+        convertToBigInt(number3);
+
+    </script>
+
+</body>
+
+</html>

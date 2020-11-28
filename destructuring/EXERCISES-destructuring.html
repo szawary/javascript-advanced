@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        console.log('--- task 1. ---');
+
+        const user = {
+            firstName: 'John',
+            lastName: 'Doe',
+        };
+
+        const {
+            firstName = 'unknown',
+            lastName = 'unknown',
+            job = 'unknown',
+        } = user;
+
+        console.log(firstName, lastName, job);
+
+        console.log('--- task 2. ---');
+
+        const {
+            firstName: l = 'unknown',
+            lastName: f = 'unknown',
+            j = 'unknown',
+        } = user;
+        console.log(l, f, j);
+
+        console.log('--- task 3. ---');
+
+        const names = ['John', 'Jane', 'Judith', 'Jennefer', 'Jeremiah', 'Johnny'];
+
+        const [a, , c, , e] = names;
+        console.log(a, c, e);
+
+    </script>
+
+</body>
+
+</html>
