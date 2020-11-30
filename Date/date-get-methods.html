@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const dateNow = new Date();
+        console.log('year: ', dateNow.getFullYear());
+        console.log('month: ', dateNow.getMonth()); // [0-11]
+        console.log('day of the week: ', dateNow.getDay());
+        console.log('day of the month: ', dateNow.getDate());
+        console.log('hours: ', dateNow.getHours());
+        console.log('minutes: ', dateNow.getMinutes());
+        console.log('seconds: ', dateNow.getSeconds());
+        console.log('miliseconds: ', dateNow.getMilliseconds());
+
+        // UTC
+        // multicursor mode -- alt+shift+click  // alt + click
+        // Greenwich time zone
+
+        const dateNowUTC = new Date();
+        console.log('UTC year: ', dateNowUTC.getUTCFullYear());
+        console.log('UTC month: ', dateNowUTC.getUTCMonth()); // [0-11]
+        console.log('UTC day of the week: ', dateNowUTC.getUTCDay());
+        console.log('UTC day of the month: ', dateNowUTC.getUTCDate());
+        console.log('UTC hours: ', dateNowUTC.getUTCHours());
+        console.log('UTC minutes: ', dateNowUTC.getUTCMinutes());
+        console.log('UTC seconds: ', dateNowUTC.getUTCSeconds());
+        console.log('UTC miliseconds: ', dateNowUTC.getUTCMilliseconds());
+
+
+    </script>
+</body>
+
+</html>
