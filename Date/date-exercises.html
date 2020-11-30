@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const dateNow = new Date();
+        const dateStart = new Date('2020-01-01T00:00:00');
+        const periodSec = dateNow.getTime() / 1000 - dateStart.getTime() / 1000
+
+        console.log('From 1. Jan. to present time spend: ', periodSec, 'sec.');
+
+        console.log('-------------- xxx -------------');
+
+        const worksDayNumber = periodSec / 60 / 60 / 24 / 7 * 5;
+        console.log('Numbers of works day in this year to now: ', worksDayNumber);
+
+        console.log('-------------- xxx -------------');
+
+        const weekendDays = periodSec / 60 / 60 / 24 / 7 * 2;
+        console.log('Numbers of weekends day in this year to now: ', weekendDays);
+
+        console.log('-------------- xxx -------------');
+
+        function dateObj(a, b) {
+            const obj = {
+                short: a,
+                long: b,
+            }
+            return console.log(obj);
+        }
+
+        // 2020. jan. 11. 14:20 
+        const short = dateNow.getFullYear() + `. ` + dateNow.getMonth() + ` `;
+        const longDate = dateNow.toLocaleDateString('hu');
+        const longTime = dateNow.toLocaleTimeString('hu');
+        // 2020. január 11. 14:20:10
+        const long = longDate + ` ` + longTime;
+        const dateObject = dateObj(short, long);
+
+    </script>
+</body>
+
+</html>
