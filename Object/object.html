@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const person = {
+            firstName: 'John',   // this is property
+            lastName: 'Doe',
+            age: 30,
+            logName() {         // this is method
+                console.log(`I'm ${this.firstName} ${this.lastName}.`);
+            },
+            logName2: function () {
+
+            },
+
+        };
+
+        console.log(person.firstName);     // this is popular
+        console.log(person['firstName']);  // this is the same
+
+        // Modify
+        person.firstName = 'Jane';
+        console.log(person.firstName);
+
+        // Add
+        person.hobbies = ['reading', 'walking'];
+        console.log(person);
+
+        // Delete
+        delete person.age;
+        console.log(person);
+
+
+
+        person.logName();
+
+        const user = {
+            firstName: 'John',
+            lastName: 'Doe',
+            hobbies: ['reading', 'learning', 'runing'],
+            getHobby: function (index) {            // never use arrow function
+                const hobby = this.hobbies[index];
+                return `${hobby[0].toLocaleUpperCase()}${hobby.slice(1)}`;
+            }
+        }
+        console.log(user.hobbies[0]);
+        console.log(user.getHobby(0));
+    </script>
+</body>
+
+</html>
