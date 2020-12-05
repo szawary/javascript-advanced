@@ -7,7 +7,7 @@ let name3 = 'Béci';
 var name = 'Józsi'; // NOT overwrite !!!, this is a new variable, prewious var is unable.
 name = 'Józsi'; // Redefine!! overwrite!!
 
-name2 = 'Peti'; // NOT possible, this is constant.
+// name2 = 'Peti'; // NOT possible, this is constant. Error
 
 name3 = 'Pali'; // new value get name3
 
@@ -32,3 +32,33 @@ name3 = 'Pali'; // new value get name3
                     arr.push(6); // add an element to the end
                     arr.unshift(8) // insert before to the first element
                     arr.pop(); // delete the last element
+                    arr.shift(); // delete the first element
+
+        - object    // everything is object
+*/
+
+const user = {
+    name: 'Laszlo Szabo',
+    age: 55,
+    address: 'Bp. XXI. Kiss tér 22.',
+    email: 'valami@gmail.com',
+    salary: 4000,
+};
+console.log(user.address);
+user.salary = 5000;
+console.log(user.salary);
+
+user.departnemt = 'accounting';
+console.log(user.departnemt);
+
+console.log(user.departnemt.length);
+
+user.hello = function () {
+    return `Helló, a nevem ${this.name}`;
+};
+console.log(user.hello());
+
+// changing a part of address
+user.address = user.address.replace('Bp. XXI.', 'Kecskemét');  // string is unmutabel
+console.log(user.address);
+
