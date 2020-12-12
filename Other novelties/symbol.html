@@ -19,6 +19,17 @@
         console.log(mySymbol.toString());
         console.log(mySymbol2.toString());
 
+        // Global symbol
+        const id = Symbol.for('id');
+        console.log(id.description);
+
+        const anotherId = Symbol.for('id');
+        console.log(id === anotherId);
+
+        const nameSymbol = Symbol.for('name');
+        console.log(Symbol.keyFor(nameSymbol));
+        console.log(nameSymbol.description);
+
 
     </script>
 
