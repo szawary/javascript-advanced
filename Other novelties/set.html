@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const languages = new Set(); // 1 value only 1x
+
+        languages
+            .add('php')
+            .add('python')
+            .add('perl')
+
+        console.log(languages.size);
+        console.log(languages.entries());
+        console.log(languages.values());
+        console.log(languages.has('php'));
+
+
+        // DELETE
+
+        languages.delete('php');
+        console.log(languages.size);
+
+        // CLEAR
+
+        languages.clear()
+        console.log(languages.size);
+
+        languages
+            .add('php')
+            .add('python')
+            .add('perl')
+
+        console.log(languages.values());
+
+
+    </script>
+
+</body>
+
+</html>

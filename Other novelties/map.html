@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const sampleMap = new Map();
+        sampleMap
+            .set('foo', 123)     // add new value to Map
+            .set('moo', 456)
+            .set('boo', 789)
+        console.log(sampleMap.get('foo')); // write out to ...
+        console.log(sampleMap.has('boo')); // if key is exist -> true
+
+        const objKey = {
+            name: 'John Doe'
+        };
+        // add to map an object
+        sampleMap.set(objKey, 'dead');
+        console.log(sampleMap.get(objKey));
+        console.log(sampleMap.has(objKey));
+
+        // DELETE
+
+        sampleMap.delete('foo');
+        console.log(sampleMap.size); // how many element has the map
+        console.log(sampleMap.keys());
+        console.log(sampleMap.values());
+
+        sampleMap.forEach((value, key) => console.log('key: ', key, 'value: ', value));
+
+        sampleMap.clear();
+        console.log(sampleMap.size);
+
+    </script>
+
+</body>
+
+</html>

@@ -31,6 +31,24 @@
         console.log(nameSymbol.description);
 
 
+
+        console.log('--- using Symbol as an hidden property');
+        // using Symbol -> hidden property
+
+        const id1 = Symbol('id');
+        const person = {
+            [id1]: 1,
+            firstName: 'John',
+            lastName: 'Doe',
+        }
+        for (const key in person) {
+            if (person.hasOwnProperty(key)) {
+                console.log(key);
+            }
+        }
+
+        console.log(Object.getOwnPropertySymbols(person).map(symbol => person[symbol]));
+
     </script>
 
 </body>
