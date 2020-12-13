@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        console.log('---- 2. ---');
+        const HU = {
+            date(now) {
+                console.log(new Intl.DateTimeFormat('hu-HU').format(now));
+            },
+            currency(amount) {
+                console.log(
+                    new Intl.NumberFormat('hu-Hu', {
+                        style: 'currency',
+                        currency: 'HUF',
+                    }).format(amount));
+            },
+            list(string) {
+
+            }
+        };
+
+        HU.date(new Date());
+        HU.currency(234121881723987);
+    </script>
+</body>
+
+</html>
