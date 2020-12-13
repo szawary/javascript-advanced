@@ -34,12 +34,19 @@
         languages.clear()
         console.log(languages.size);
 
+
+
+
         languages
             .add('php')
             .add('python')
             .add('perl')
 
-        console.log(languages.values());
+        const values = languages.values();
+        console.log(values.next());     // show, is there next element?
+        console.log(values.next());
+        console.log(values.next());
+        console.log(values.next());
 
 
     </script>
