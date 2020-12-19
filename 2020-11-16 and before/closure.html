@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        //Closure, ha lefut a függvény akkor után nem
+        // törlődik a változó értéke, hanem továbbra is
+        // elérhető.
+
+        function makeCounter() {
+            let counter = 0;
+            return function increaseCounter(){
+                counter += 1;
+                console.log(counter);
+            }
+        }
+
+        // a konstatnsban benne lesz a függvény
+
+        const increaseCounter = makeCounter();
+        
+        // a függvény futtatása, ez után is hozzáférek az értékekhez.
+        increaseCounter();
+        increaseCounter();
+        increaseCounter();
+        increaseCounter();
+        increaseCounter();
+        increaseCounter();
+
+        console.log('--------------------- curly ----');
+
+        // meghívom a függvényt és annak visszatérési 
+        //értékét is meghívom.
+
+        makeCounter()()
+
+        // az értéke a változóban van mentve.
+
+        increaseCounter()();
+
+    </script>
+</body>
+</html>

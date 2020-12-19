@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        //Function definitions
+        // amenyiben függvényként hozom létre, akkor
+        // a consol logban már a függvény előtt tudom használni.
+
+        console.log(getGrossPriceFD(100000, 27));
+
+        function getGrossPriceFD(netPrice, vatPercent) {
+            return netPrice * (1* vatPercent / 100);
+        }
+
+        // Az alábbinál változóba teszem, így a függvényemet
+        // csak anak lefutását követően tudom hasznáni.
+
+        const getGrossPriceFE = function(netPrice, vatPercent) {
+            return netPrice * (1* vatPercent / 100);
+        }
+
+        console.log(getGrossPriceFE(50000, 27));
+
+
+        let egyvaltozo = 2;
+        let masikvaltozo = 3;
+        console.log (egyvaltozo);
+        function osszeadofuggveny(egyvaltozo, masikvaltozo) {
+            return egyvaltozo + masikvaltozo;
+        }
+
+        console.log(osszeadofuggveny(egyvaltozo, masikvaltozo));
+
+
+
+    </script>
+
+
+</body>
+</html>
