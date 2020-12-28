@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        'use strict';
+
+        const validator = {
+            patterns: {
+                taj: /^(\d{3} ){2}\d{3}$/,
+                id: /^\d{6}[A-Z]{2}$/,
+                name: /^[A-ZÁÉÍÓÚŐÖÜŰ][a-záéíóúöőűü]$/
+            },
+            validate(text, type) {
+                return text.match(this.patterns[type]) ? true : false;
+            }
+        }
+        console.log(validator.validate('123 345 678', 'taj'));
+        console.log(validator.validate('123456AAA', 'id'));
+        console.log(validator.validate('Sza', 'name'));
+
+
+
+    </script>
+
+</body>
+
+</html>

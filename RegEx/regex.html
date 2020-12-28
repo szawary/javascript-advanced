@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        'use strict';
+
+        const pattern = /ab/;
+        const text = 'abraka dabra';
+        // tartalmazza -e a patternt és hanyadik indexnél 
+        console.log(pattern.exec(text));
+        console.log(text.match(pattern));
+        // ha nincs találat akkor null-t kapok vissza
+
+        // Flagek vagy kapcsolók
+        // i , g , m
+        // i = nem lesz casesensitive - kis és nagybetü
+        // g = globális kapcsoló, nem lép ki az első talált után
+        // m = multiline, azaz többsoros keresés
+        // const pattern = /ab/igm;
+
+        // const pattern = /^ab/; illeszkedés a minta szöveg elején
+        // const pattern = /ab$/; a minta végén keresk
+
+        // Csoportosítás, van-e benne a vagy b vagy c !
+        // tömböt ad vissza
+        const pattern2 = /[abc]/g;
+        const pattern3 = /[^abc]/;  // a vagy b vagy c karakterrel kezdődik
+        const pattern4 = /[abc$]/; // a vagy b vagy c karakterrel végződik
+        const pattern5 = /^(ab|bc)/; // kezdődjön ab vagy bc-vel
+        const pattern6 = /^(ab|bc)$/; // az elejétől a végéig csak vagy ab vagy bc-t tartalmazhat
+        console.log(text.match(pattern2));
+        console.log(text.match(pattern3));
+        console.log(text.match(pattern4));
+        console.log(text.match(pattern5));
+        console.log('abc'.match(pattern6));
+
+        // a pont bármilyen karakterre egyezést fog mutatni
+        const pattern7 = /^.a/; // bármivel keződik de után a betű legyen
+        console.log(text.match(pattern7));
+
+        // + jel = az előtte levő karakter legalább egyszer vagy többször szerepel
+        const pattern8 = /.a+/;
+        const text2 = 'abraka';
+        console.log(text2.match(pattern8));
+
+        // * jel = az előtte levő karakter nullaszor vagy többször szerepel
+        const pattern9 = /.a*/;
+        const text3 = 'abraka';
+        console.log(text3.match(pattern9));
+
+        // ? jel = az előtte levő karakter nullaszor vagy egyszer szerepel
+        const pattern10 = /ba?/;
+        const text4 = 'ab';
+        console.log(text4.match(pattern10));
+
+        // az előtte lévő karakter 'a' minimum és maximum darabszám megadása
+        const pattern11 = /ba{2,5}[^a]/; // a szögletesben tagadás van, utána ne a karakter jöjjön
+        console.log('abaabbaaab'.match(pattern11));
+
+
+        // Metakarakterek
+        const pattern12 = /[a-z]/; // a-tól z-ig bármit tartalmaz-e?
+        const pattern13 = /^[a-z]+$/; // csak és kizárólag az angol abc betűít tartalmazza, szóközt sem.
+        const pattern14 = /^[a-zA-Z]+$/; // csak és kizárólag az angol kis és nagy abc betűít tartalmazza, szóközt sem.
+        const pattern15 = /^[a-zA-Z0-9]+$/;
+        const pattern16 = /^[a-zöüóőúűáéA-Z0-9_]+$/; //_ is 
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
