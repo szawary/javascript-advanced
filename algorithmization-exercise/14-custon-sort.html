@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const getElementsByType = (arr, type) => {
+            const elements = [];
+            for (let i = 0; i < arr.length; i += 1) {
+                if (typeof arr[i] === type) {
+                    elements.push(arr[i])
+                }
+            }
+            return elements;
+        };
+
+        const manualSort = arr => {
+            const strings = getElementsByType(arr, 'string');
+            const numbers = getElementsByType(arr, 'number');
+            const sortedArr = [];
+            for (let i = 0; i < strings.length; i += 1) {
+                sortedArr.push(numbers[i], strings[i]);
+            }
+            return sortedArr;
+        }
+
+        const arr = [45, 67, 34, 56, 'alma', 'körte', 'béka', 'kutyka',];
+        console.log(manualSort(arr));
+    </script>
+
+
+</body>
+
+</html>

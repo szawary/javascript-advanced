@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./000-bubble-sorting.js"></script>
+    <script>
+        'use strict';
+        // 1. rendezzük a tömböt
+        // 2. bekérjük az új számot
+        // 3. beszúrjuk a számot - ciklus, kiszedem a kisebbeket, kiszedem a nagyobbakat
+        // a kisebbnek a végére pusholom a számot, majd összefűzöm a nagyobbakat.
+
+        const inputNumbericData = () => {
+            let number;
+            do {
+                number = parseInt(prompt('Adj meg egy számot'), 10);
+            }
+            while (Number.isNaN(number) || number === Number.POSITIVE_INFINITY || number === Number.NEGATIVE_INFINITY);
+            return number;
+        }
+
+        const insertionSort = arr => {
+            const sortedArr = bubbleSort(arr);
+            const number = inputNumbericData();
+            for (let i = 0; i < sortedArr.length; i += 1) {
+                if (sortedArr[i] > number) {
+                    sortedArr.splice(i, 0, number);
+                    return sortedArr;
+                }
+            }
+        }
+
+        const arr = [554, 246, 5448, 224, 65, 4,];
+        console.log(insertionSort(arr));
+
+
+
+
+    </script>
+
+</body>
+
+</html>
