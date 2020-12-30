@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const arr1 = [1, 2, 3, 4, 5];
+        const arr2 = [3, 4, 5, 6, 7];
+        // két tömb összevonása, ismétlés nélkül
+        function union(arr1, arr2) {
+            const union = [];
+            for (let i = 0; i < arr1.length; i += 1) {
+                if (union.indexOf(arr1[i]) === -1) {
+                    union.push(arr1[i]);
+                }
+                if (union.indexOf(arr2[i]) === -1) {
+                    union.push(arr2[i]);
+                }
+            }
+            return union;
+        }
+
+        console.log(union(arr1, arr2));
+
+        // a két tömb metszete
+        function section(arr1, arr2) {
+            const section = [];
+            for (let i = 0; i < arr1.length; i += 1) {
+                if (arr1.indexOf(arr2[i]) !== -1) {
+                    section.push(arr2[i]);
+                }
+            }
+            return section;
+        }
+        console.log(section(arr1, arr2));
+
+        // különbség, 1-ben benne van de a kettőben nem
+        function defference(arr1, arr2) {
+            const section = [];
+            for (let i = 0; i < arr1.length; i += 1) {
+                if (arr2.indexOf(arr1[i]) === -1) {
+                    section.push(arr1[i]);
+                }
+            }
+            return section;
+        }
+        console.log(defference(arr1, arr2));
+
+        function descartes(arr1, arr2) {
+            const descartes = [];
+            for (let i = 0; i < arr1.length; i += 1) {
+                for (let j = 0; j < arr1.length; j += 1) {
+                    descartes.push(arr1[i] * arr2[j]);
+                }
+            }
+            return descartes;
+        }
+        console.log(descartes(arr1, arr2));
+
+    </script>
+
+</body>
+
+</html>
