@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        /* Teteszőleges számú elem csak egész számokat
+        tartalmazó tömb LEGNAGYOBB eleme. */
+
+        function maximum(arr) {
+            let max = arr[0];              // ebben gyűjtöm be a legnagyobbat
+            for (let i = 1; i < arr.length; i += 1) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;     // függvényen belül returnt használunk
+        }
+
+        console.log(maximum([1, 2, 4, 63, -100, 382]));
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./000-bubble-sorting.js"></script>
+    <script>
+        'use strict';
+
+        function getNthElementFromAnArray(arr, nth) {
+            const sortedArray = bubbleSort(arr);
+            return sortedArray[nth - 1];
+        }
+
+        console.log(getNthElementFromAnArray([1, 2, 3, 4, 5, 6], 3));
+
+
+
+
+
+    </script>
+</body>
+
+</html>

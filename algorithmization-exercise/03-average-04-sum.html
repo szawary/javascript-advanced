@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        /* Teteszőleges számú elem csak egész számokat
+        tartalmazó tömb ÁTLAGA. */
+
+        function getSum(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i += 1) {
+                sum += arr[i];  // tömb elemeinek összegét kapom
+            }
+            return sum;
+        }
+
+        function getAverage(arr) {
+            return getSum(arr) / arr.length;
+        }
+
+        console.log(getSum([1, 2, 4, 63, -100, 382]));
+        console.log(getAverage([1, 2, 4, 63, -100, 382]));
+
+    </script>
+
+</body>
+
+</html>
