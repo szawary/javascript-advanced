@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./000-bubble-sorting.js"></script>
+    <script>
+        'use strict';
+        // A kapott tömb bármit tartalmazhat.
+        // ki kell szervezni a számokat, másik tömbben lesz a nem szám
+
+        const customShort = arr => {
+            let numbers = [];
+            const notNumbers = [];
+            for (let i = 0; i < arr.length; i += 1) {
+                if (typeof arr[i] === 'number') {
+                    numbers.push(arr[i]);
+                } else {
+                    notNumbers.push(arr[i]);
+                }
+            }
+
+            // a számokat sorbarendzem
+            numbers = bubbleSort(numbers);
+
+            // majd a sorbarendezett számokhoz fűzöm a nem számokat
+            return numbers.concat(notNumbers);
+        }
+
+        const arr = [2, 41234, 'alma', null, false, 'körte', 394, 38.23, 849];
+        console.log(customShort(arr));
+    </script>
+
+</body>
+
+</html>

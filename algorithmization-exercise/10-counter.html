@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        // hányszor tartalmazza a keresett számot?
+
+        const counter = (arr, search) => {
+            let counter = 0;
+            for (let i = 0; i < arr.length; i += 1) {
+                if (arr[i] === search) {
+                    counter += 1;
+                }
+            }
+            return counter;
+        }
+
+        const arr = [1, 2, 3, 4, 5, 23, 23, 23,];
+        const searchValue = 23;
+        console.log(counter(arr, searchValue));
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-function bubblosSort(arr) {
+function bubbleSort(arr) {
     let swapped;                           // ebben a változóban csak azt tárolom, hogy a tömb rendezett-e vagy sem.
 
     do {                                  // egyszer mindenképpen le fog futni

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./000-bubble-sorting.js"></script>
+    <script>
+        'use strict';
+        // csak rendezett tömb esetén működik a logaritmikus keresés.
+
+        function binarySearch(arr, search) {
+            let start = 0;
+            let end = arr.length - 1;          // a tömb utolsó elemének indexét adja.
+
+            while (start <= end) {            // megnézem, hogy van-e eleme a tömbnek.
+                let mid = Math.floor((start + end) / 2);  // Megkeresem a középső elemet.
+                // lefele kerekítem a floor-ral
+                if (arr[mid] === search) {    // ha a középső a keresettel egyenlő
+                    return true               // akkor true
+                }
+                else if (arr[mid] < search)
+                    start = mid + 1;
+                else
+                    end = mid - 1;
+            }
+            return false;
+        }
+
+        const arr = [1, 2, 3, 4, 5, 6, 7,];
+        const sortedArray = bubbleSort(arr);
+        console.log(binarySearch(sortedArray, 2));
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
