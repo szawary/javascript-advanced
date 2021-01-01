@@ -13,7 +13,7 @@ const promise1 = new Promise((resolve, reject) => {
     }, 3000);
 });
 
-promise1.then(
+promise1.then(                  // csak az egyik fut le!!!
     data => console.log(data),
     err => console.error(err), // itt megszűnik a promise, vagy ez vagy az a kimenet.
 );
@@ -27,11 +27,12 @@ fetch(jsonUrl).then(
     function (response) {
         return response.json();
     },
-).then(
+).then( // sikeresség esetén ez fut le
     data => {
         console.log(data);
         console.timeEnd('pr');
     },
-).catch(
+).catch( // mi van akkor ha hiba történik
     err => console.error(err),
 );
+// bármennyi then és catch águnk lehet!!

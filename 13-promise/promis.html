@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const samplePromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const randomNumber = Math.floor(Math.random() * 11);
+                if (randomNumber > 5) {
+                    resolve('Promis is fullfilled')
+                } else {
+                    reject(new Error('Promise error'))
+                }
+            }, 500)
+
+        })
+
+        samplePromise
+            .then((data) => console.log(data)) // sikeres futás
+            .catch((error) => console.log(error)) // sikertelen
+            .finally(() => console.log('Settled')) // ez az ág mindig lefut.
+
+
+
+
+    </script>
+
+</body>
+
+</html>
