@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const cat = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({
+                    sound: 'miau',
+                    loyal: false,
+                })
+            }, 3000)
+        });
+        const dog = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({
+                    sound: 'vau',
+                    loyal: true,
+                })
+            }, 6000)
+        });
+
+        Promise
+            .all([cat, dog])
+            // ez az ág csak akkor fut le ha az összes 
+            // promis fullfiled, lefutott
+            .then((results) => {
+                const [cat, dog] = results;
+                console.log(cat, dog)
+            })
+
+            //ha egynél is hiba lép fel a catch ágra fut
+            .catch((error) => {
+                console.error(error);
+            })
+
+    </script>
+
+</body>
+
+</html>

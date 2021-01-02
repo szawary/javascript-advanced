@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        const thenAbleObject = {
+            age: 30,
+            then(resolve, reject) {
+                setTimeout(() => resolve(this.age * 3), 1000)
+            }
+        };
+        Promise
+            .resolve('Success')
+            .then((result) => {
+                console.log(result);
+                return thenAbleObject;
+            })
+            .then((value) => console.log(value))
+    </script>
+
+</body>
+
+</html>
