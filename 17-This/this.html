@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This</h1>
+    <button class="no-click-btn">Ne nyomd meg!</button>
+    <script>
+        //'use strict';
+
+        // GLOBÁLIS NÉVTÉR
+        // THIS az az objektum, ami fókuszban van.
+
+        const version = '1.0.0';  // nincs benne a windowban const, let sem.
+        // a var változó benne van, nem szabad használni.
+
+        console.log(this); // windows obj, mindennek ez az alapja
+
+        function testThis() {
+            // testThis függvény névtere
+            console.log(this);
+        };
+        testThis();     // windows lesz use strict nélkül, 
+        // undefine =>> use strict-tel
+
+        const arrowTest = () => {
+            // arrowTest függvény névtere
+            console.log(this);
+        };
+        arrowTest();  // ez is windows
+
+        // THIS az objektumon belül érvényes !!
+        const user = {
+            name: 'Józsi',
+            hello: function () {
+                console.log(this, `Hello, a nevem ${this.name}.`);
+            }, // a this az objektum
+            hellobello() {
+                console.log(`Egyszerűsített változat ${this.name}.`);
+            }, // a this az objektum
+            voice: () => console.log(this, `arrow function ${this.name}`),
+            // ez arrow function, ahol a this a window!!!
+        };
+        user.hello();
+        user.hellobello();
+        user.voice(); // ez arrow function, ahol a this a window!!!
+        // a let és a const nem kerül bele a windows-ba.
+
+
+        // ESEMÉNYEN BELÜLI THIS
+
+        const noClickBtn = document.querySelector('.no-click-btn');
+        noClickBtn.addEventListener('click', function (ev) {
+            console.log('No click', this, ev); // a this a gomb
+            // az ev lesz az esemény => egérkattintás
+        });
+
+
+        // Az arrow function nem bindolja a thist.
+        // nem köti a thist az elemhez a arrow function
+        noClickBtn.addEventListener('click', (ev) => {
+            console.log('No click', this, ev, ev.currentTarget); // a this a window!
+            // az ev lesz az esemény => egérkattintás
+        });
+
+        // CALL ÉS APPLY HASZNÁLATA
+        // meglévő függvényt hív meg egy megadott this-szel
+        // a this az első paraméter, utána sorban jön a többi
+        // a call és az apply közötti különbség, hogy az apply tömb
+        // formátumban várja a paramétereket.
+
+        function readName(nice) {
+            console.log(this, this.name, nice);
+        }
+        readName();
+        readName.call({ name: 'Sanyi' }, 'good'); // meg tudom mondani a fügvénynek, hogy
+        // mi legyen a this! Az első paraméterként a this-t adom meg, utána a többi.
+        readName.apply({ name: 'Péter' }, ['best']); //a paramétert tömbben adom át.
+
+        // BIND HASZNÁLATA, A FÜGGVÉNYBŐL LÉTREHOZ EGY ÚJ PÉLDÁNYT
+        /* új függvényt hoz létre az eredeti alapján, egy megadott this-szel */
+
+        const r2 = readName.bind({ name: 'Gabi' });
+        r2('better');
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
