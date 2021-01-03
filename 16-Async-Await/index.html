@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Async Await</h1>
+    <script>
+        'use strict';
+
+        // Make a Promise.
+        const myPromise = new Promise((res, rej) => {
+            setTimeout(() => {
+                res('Én vagyok a jó királyfi.');
+            }, 2000);
+        });
+
+        myPromise.then(
+            sentence => console.log(sentence)
+        ).catch(
+            err => console.error(err)
+        );
+
+        //
+
+        const myPromise1 = () => {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res('Én vagyok a jó királyfi1.');
+                }, 2000);
+            });
+        };
+
+        const s = myPromise1();
+
+        s.then(
+            sentence => console.log(sentence)
+        );
+
+        // ez a függvény nem a fő száloln fog futni, hanem párhuzamosan
+        // az await kulcsszót csak asszinkron függvényben lehet használni
+        // mind a három függvényt bevárta a program
+        const init = async () => {
+            const s = await myPromise1();
+            const s2 = await myPromise1();
+            const s3 = await myPromise1();
+            console.log(s, s2, s3);
+            console.timeEnd('ff');
+        };
+        init();
+        console.time('ff');
+        console.log('Program is running ...');
+
+
+
+
+    </script>
+
+</body>
+
+</html>
